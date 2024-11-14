@@ -32,3 +32,9 @@ router ospf 1
    vxlan vlan 10 flood vtep 2.2.2.2
   
 ```
+
+Настройка leaf2 для статического туннеля vxlan
+```
+conf
+```
+
