@@ -61,6 +61,23 @@ interface Vxlan1
 ### Проверка
 На leaf1 проверяем ospf и vxlan туннель
 ```
+Leaf1#sh ip route ospf
+
+VRF: default
+Codes: C - connected, S - static, K - kernel,
+       O - OSPF, IA - OSPF inter area, E1 - OSPF external type 1,
+       E2 - OSPF external type 2, N1 - OSPF NSSA external type 1,
+       N2 - OSPF NSSA external type2, B - Other BGP Routes,
+       B I - iBGP, B E - eBGP, R - RIP, I L1 - IS-IS level 1,
+       I L2 - IS-IS level 2, O3 - OSPFv3, A B - BGP Aggregate,
+       A O - OSPF Summary, NG - Nexthop Group Static Route,
+       V - VXLAN Control Service, M - Martian,
+       DH - DHCP client installed default route,
+       DP - Dynamic Policy Route, L - VRF Leaked,
+       G  - gRIBI, RC - Route Cache Route
+
+ O        2.2.2.2/32 [110/20] via 10.0.0.1, Ethernet3
+
 Leaf1#ping 2.2.2.2 source 1.1.1.1
 PING 2.2.2.2 (2.2.2.2) from 1.1.1.1 : 72(100) bytes of data.
 80 bytes from 2.2.2.2: icmp_seq=1 ttl=64 time=17.3 ms
