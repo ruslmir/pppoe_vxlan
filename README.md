@@ -20,6 +20,8 @@ interface Ethernet3
 interface Loopback0
    ip address 1.1.1.1/32
 
+ip routing
+
 router ospf 1
    network 1.1.1.1/32 area 0.0.0.0
    network 10.0.0.0/32 area 0.0.0.0
