@@ -100,3 +100,5 @@ VTEP          Tunnel Type(s)
 Total number of remote VTEPS:  1
 
 ```
+Смотрим дамп с помощью wireshark с Client1 проверяя что pppoe трафик вылетел в сеть с интерфейса fa0/0
+![pppoe_client](Client1_fa0_0.png "ppppoe_client")
