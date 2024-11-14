@@ -90,4 +90,13 @@ PING 2.2.2.2 (2.2.2.2) from 1.1.1.1 : 72(100) bytes of data.
 5 packets transmitted, 5 received, 0% packet loss, time 57ms
 rtt min/avg/max/mdev = 4.218/8.691/17.352/5.039 ms, pipe 2, ipg/ewma 14.422/12.720 ms
 
+Leaf1#sh vxlan vtep
+Remote VTEPS for Vxlan1:
+
+VTEP          Tunnel Type(s)
+------------- --------------
+2.2.2.2       unicast, flood
+
+Total number of remote VTEPS:  1
+
 ```
