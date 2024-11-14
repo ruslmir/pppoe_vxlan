@@ -10,33 +10,51 @@
 ```
 interface Ethernet1
    switchport access vlan 10
-
+!
 interface Ethernet3
-   switchport mode trunk
    no switchport
    ip address 10.0.0.0/31
    ip ospf network point-to-point
-
+!
 interface Loopback0
    ip address 1.1.1.1/32
-
+!
 ip routing
-
+!
 router ospf 1
    network 1.1.1.1/32 area 0.0.0.0
    network 10.0.0.0/32 area 0.0.0.0
- 
- 
+! 
  interface Vxlan1
    vxlan source-interface Loopback0
    vxlan udp-port 4789
    vxlan vlan 10 vni 10010
    vxlan vlan 10 flood vtep 2.2.2.2
-  
-```
+ ```
 
 Настройка leaf2 для статического туннеля vxlan
 ```
-conf
+interface Ethernet1
+   switchport access vlan 10
+!
+interface Ethernet3
+   no switchport
+   ip address 10.0.0.1/31
+   ip ospf network point-to-point
+!
+interface Loopback0
+   ip address 2.2.2.2/32
+!
+ip routing
+!
+router ospf 1
+   network 2.2.2.2/32 area 0.0.0.0
+   network 10.0.0.1/32 area 0.0.0.0
+!
+interface Vxlan1
+   vxlan source-interface Loopback0
+   vxlan udp-port 4789
+   vxlan vlan 10 vni 10010
+   vxlan vlan 10 flood vtep 1.1.1.1
 ```
 
