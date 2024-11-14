@@ -100,5 +100,24 @@ VTEP          Tunnel Type(s)
 Total number of remote VTEPS:  1
 
 ```
+На Clinet1 делаем проверку доступности Server и pppoe сессии
+```
+Client1>sh pppoe session
+     1 client session
+
+Uniq ID  PPPoE  RemMAC          Port                    VT  VA         State
+           SID  LocMAC                                      VA-st
+    N/A      1  c204.e1cc.0000  Fa0/0                  Di1  Vi1        UP
+                c203.ea5a.0000                              UP
+
+
+Client1>ping 172.16.1.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.16.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 28/33/40 ms
+```
+
 Смотрим дамп с помощью wireshark с Client1 проверяя что pppoe трафик вылетел в сеть с интерфейса fa0/0. По заголовкам видим что идет Ethernet, pppoe, icmp
 ![pppoe_client](Client1_fa0_0.png "ppppoe_client")
