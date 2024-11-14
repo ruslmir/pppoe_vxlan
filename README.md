@@ -8,6 +8,9 @@
 
 Настройка leaf1 для статического туннеля vxlan
 ```
+interface Ethernet1
+   switchport access vlan 10
+
 interface Ethernet3
    switchport mode trunk
    no switchport
