@@ -120,4 +120,7 @@ Success rate is 100 percent (5/5), round-trip min/avg/max = 28/33/40 ms
 ```
 
 Смотрим дамп с помощью wireshark с Client1 проверяя что pppoe трафик вылетел в сеть с интерфейса fa0/0. По заголовкам видим что идет Ethernet, pppoe, icmp
-![pppoe_client](Client1_fa0_0.png "ppppoe_client")
+![pppoe_client](Client1_fa0_0.png "pppoe_client")
+
+Смотрим дамп с помощью wireshark с Leaf1 проверяя что pppoe трафик вылетел в фабрику поверх vxlan(udp) с интерфейса Eth3. По заголовкам видим что идет Ethernet, pppoe, icmp
+![pppoe_vxlan](leaf1_eth3.png "pppoe_vxlan")
