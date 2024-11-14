@@ -59,7 +59,7 @@ interface Vxlan1
 ```
 
 ### Проверка
-На leaf1 проверяем ospf и vxlan туннель
+На leaf1 проверяем ospf и доступность лупбеков для vxlan туннеля
 ```
 Leaf1#sh ip route ospf
 
