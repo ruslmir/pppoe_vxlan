@@ -59,4 +59,18 @@ interface Vxlan1
 ```
 
 ### Проверка
+На leaf1 проверяем ospf и vxlan туннель
+```
+Leaf1#ping 2.2.2.2 source 1.1.1.1
+PING 2.2.2.2 (2.2.2.2) from 1.1.1.1 : 72(100) bytes of data.
+80 bytes from 2.2.2.2: icmp_seq=1 ttl=64 time=17.3 ms
+80 bytes from 2.2.2.2: icmp_seq=2 ttl=64 time=11.4 ms
+80 bytes from 2.2.2.2: icmp_seq=3 ttl=64 time=5.79 ms
+80 bytes from 2.2.2.2: icmp_seq=4 ttl=64 time=4.67 ms
+80 bytes from 2.2.2.2: icmp_seq=5 ttl=64 time=4.21 ms
 
+--- 2.2.2.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 57ms
+rtt min/avg/max/mdev = 4.218/8.691/17.352/5.039 ms, pipe 2, ipg/ewma 14.422/12.720 ms
+
+```
